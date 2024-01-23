@@ -2,24 +2,29 @@
 
 import ArtistsCard from "@/components/composite/cards/artists-card"
 import Search from "@/components/composite/search"
+import { DeezerSearchResponse } from "@/types/models/deezer/search"
 import { useSearchParams } from "next/navigation"
 
-const ARTIST_SEARCH_NAME = 'artistSearch'
+export const ARTIST_SEARCH_NAME = 'artistSearch'
 
-
-const ArtistSearch = () => {
-
+export type ArtistSearchType = {
+  initialData?: SuccessResponse<DeezerSearchResponse[]> 
+}
+const ArtistSearch = ({ initialData }: ArtistSearchType) => {
   const pageSearchParams = useSearchParams()
-  const searchText = pageSearchParams.get('artistSearch') ?? undefined
+  const searchText = pageSearchParams.get(ARTIST_SEARCH_NAME) ?? undefined
 
-return (
-  <search>
-    <form>
-      <Search name={ARTIST_SEARCH_NAME} searchText={searchText} />
-      <ArtistsCard />
-    </form>
-  </search>
- )
+  return (
+    <search>
+      <form>
+        <Search 
+          name={ARTIST_SEARCH_NAME} 
+          searchText={searchText} 
+        />
+        <ArtistsCard initialResponse={initialData} />
+      </form>
+    </search>
+  )
 }
 
 export default ArtistSearch

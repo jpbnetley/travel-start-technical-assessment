@@ -1,0 +1,10 @@
+.main {
+  padding: 0.5em;
+  background-color: #282828;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+.main::placeholder {
+  color: #e5e5e59e;
+}

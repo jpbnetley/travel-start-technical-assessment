@@ -1,6 +1,5 @@
-.artist-row {
-  border: 1px solid white;
-  padding: 0.5rem;
-  margin: 0.5rem;
-  border-radius: 1rem;
+.link:hover {
+  color: rgb(103, 224, 145);
+  text-decoration: solid;
+  cursor: pointer;
 }

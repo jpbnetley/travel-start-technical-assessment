@@ -6,6 +6,7 @@ import ArtistSearch from "@/components/composite/artist-search";
 export type HomeType = {
   searchParams: { [key: string]: string | string[] | undefined }
 }
+
 export default async function Home({ searchParams }: HomeType) {
   const artistSearchParam = searchParams?.artistSearch
   
@@ -14,7 +15,7 @@ export default async function Home({ searchParams }: HomeType) {
     : artistSearchParam
 
   const response = cleanedArtistSearchParam 
-  ? await search(cleanedArtistSearchParam)
+  ? await search(cleanedArtistSearchParam, { searchConfig: { searchType: 'artist' } })
   : undefined
   
   return (

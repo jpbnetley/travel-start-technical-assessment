@@ -10,7 +10,7 @@ const fetchResponseHandler = async <ReturnType>(input: string | URL | Request, c
     status: ${status}
     statusText: ${statusText}
     `
-    throw new Error(errorMessage, { cause: 'api server' })
+    throw new Error(errorMessage, { cause: { root: 'api server', context: 'fetchResponseHandler' } })
   }
   
   const jsonResponse = await response.json()

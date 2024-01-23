@@ -8,6 +8,7 @@ export const URL = `${DEEZER_BASE_URL}/search`
 export type SearchConfig = {
   strict?: boolean,
   order?: 'RANKING' | 'TRACK_ASC' | 'TRACK_DESC' | 'ARTIST_ASC' | 'ARTIST_DESC' | 'ALBUM_ASC' | 'ALBUM_DESC' | 'RATING_ASC' | 'RATING_DESC' | 'DURATION_ASC' | 'DURATION_DESC'
+  searchType?: 'artist' | 'album' | 'track' | 'label' | 'dur_min' | 'dur_max' | 'bpm_min' | 'bpm_max'
 }
 
 export type Config = {
@@ -15,11 +16,23 @@ export type Config = {
   fetchConfig?: RequestInit
 }
 export const search = async (query?: string, config?: Config ) => {
-  const { fetchConfig, searchConfig} = config ?? {}
+  const { 
+    fetchConfig, 
+    searchConfig
+  } = config ?? {}
+
+  const {
+    searchType,
+    ...restOfSearchConfig
+  } = searchConfig ?? {}
+
+  const searchString = searchType 
+    ? `${searchType}:"${query}"`
+    : query
 
   const params = qs.stringify({
-    ...query && { q: query },
-    ...searchConfig
+    ...searchString && { q: searchString },
+    ...restOfSearchConfig
   },
   {
     skipNulls: true,

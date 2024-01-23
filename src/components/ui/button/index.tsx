@@ -1,17 +1,16 @@
-import { DOMAttributes } from 'react'
+import { DOMAttributes, DetailedHTMLProps, InputHTMLAttributes } from 'react'
 import styles from './styles.module.css'
 
-export type ButtonType = Omit<DOMAttributes<HTMLInputElement>, 'type'> & {
-  text?: string,
+export type ButtonType = Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'className'> & {
   type?: 'button' | 'submit'
 }
+
 const Button = ({ 
-  text = 'Submit', 
+  type= 'button',
   ...otherProps 
   }: ButtonType) =>  (
     <input 
-      type="button" 
-      value={text} 
+      type={type}
       className={styles.main}
       {...otherProps}
     />

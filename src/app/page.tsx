@@ -1,10 +1,10 @@
-import Search from "@/components/composite/search";
 import styles from "./page.module.css";
+import ArtistSearch from "@/components/composite/artist-search";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-    <Search />
+    <ArtistSearch />
     </main>
   );
 }

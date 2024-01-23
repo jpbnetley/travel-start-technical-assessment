@@ -1,13 +1,19 @@
+import { DetailedHTMLProps, InputHTMLAttributes } from 'react'
 import styles from './styles..module.css'
 
-export type TextInputType = {
-  
+export type TextInputType = Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>, 'type' | 'className'> & {
+  type?: 'text' | 'search'
 }
-const TextInput = () => (
+
+const TextInput = ({
+  type = 'text',
+   ...otherProps
+  }: TextInputType) => (
   <input 
-  type="text" 
-  placeholder='Search here'
-  className={styles.main}
+    type={type}
+    placeholder='Search here'
+    className={styles.main}
+    {...otherProps}
   />
 )
 

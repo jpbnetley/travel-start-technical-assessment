@@ -99,6 +99,11 @@ a {
   color: inherit;
   text-decoration: none;
 }
+a:hover {
+  color: rgb(103, 224, 145);
+  text-decoration: solid;
+  cursor: pointer;
+}
 
 @media (prefers-color-scheme: dark) {
   html {

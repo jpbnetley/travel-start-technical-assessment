@@ -1,0 +1,6 @@
+.nav {
+  background-color: rgba(173, 160, 160, 0.671);
+  position: sticky;
+  inset: 0;
+  padding: 0.5em;
+}

@@ -1,6 +1,7 @@
 import Button from "@/components/ui/button";
 import styles from './styles.module.css'
 import Link from "next/link";
+import TopBar from "@/components/composite/navigation/top-bar";
 
 export default function ArtistLayout({
   children,
@@ -9,11 +10,7 @@ export default function ArtistLayout({
 }>) {
   return (
     <div>
-      <nav className={styles.nav}>
-        <Link href='/'>
-          <Button value='Back' />
-        </Link>
-      </nav>
+      <TopBar />
       <div className={styles['page-body']}>
         {children}
       </div>

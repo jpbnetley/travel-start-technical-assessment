@@ -1,21 +1,21 @@
 import { search } from "@/utils/get-data/server/search";
 import styles from "./page.module.css";
 import ArtistSearch from "@/components/composite/artist-search";
+import { NextUrlParams } from "@/types/models/next-js/url-params";
+import normaliseNextSearchParams from "@/utils/handlers/normalize-next-search-params";
 
 
 export type HomeType = {
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: NextUrlParams
 }
 
 export default async function Home({ searchParams }: HomeType) {
   const artistSearchParam = searchParams?.artistSearch
   
-  const cleanedArtistSearchParam = Array.isArray(artistSearchParam) 
-    ? artistSearchParam.join(',')
-    : artistSearchParam
+  const cleanedArtistSearchParam = normaliseNextSearchParams(artistSearchParam)
 
   const response = cleanedArtistSearchParam 
-  ? await search(cleanedArtistSearchParam, { searchConfig: { searchType: 'artist' } })
+  ? await search(cleanedArtistSearchParam)
   : undefined
   
   return (

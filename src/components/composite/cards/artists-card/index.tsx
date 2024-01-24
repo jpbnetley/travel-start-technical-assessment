@@ -1,14 +1,13 @@
 import Link from "next/link"
 import dynamic from "next/dynamic"
-import { DeezerSearchResponse } from "@/types/models/deezer/search"
 import Artist from "@/components/composite//music/artist"
-import styles from './styles.module.css'
+import { Artist as ArtistType} from "@/types/models/deezer/artist"
 
 const EmptyCard = dynamic(() => import("@/components/ui/cards/empty-card"))
 const Card = dynamic(() => import("@/components/ui/cards/base-card"))
 
 export type ArtistsCardType = {
-  initialResponse?: SuccessResponse<DeezerSearchResponse[]>
+  initialResponse?: SuccessResponse<ArtistType[]>
 }
 const ArtistsCard = ({ initialResponse }: ArtistsCardType) => {
   if (!initialResponse || !initialResponse?.data?.length) {
@@ -21,20 +20,18 @@ const ArtistsCard = ({ initialResponse }: ArtistsCardType) => {
 
   return (
   <Card title="Artists">
-      {data.map(({ artist,  id }) => 
+      {data.map(({ name,  id }) => 
       <Link 
         href={`/artists/${id}/albums`}
-        className={styles.link}
         key={id}
       >
         <Artist 
-          id={artist.id}
-          name={artist.name} 
+          id={id}
+          name={name} 
           key={id} 
         />    
        </Link>
     )}
-    
   </Card>
   )
 }

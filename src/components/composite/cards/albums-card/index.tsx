@@ -1,20 +1,43 @@
-import Card from "@/components/ui/cards/base-card"
-import EmptyCard from "@/components/ui/cards/empty-card"
+import dynamic from "next/dynamic"
+import Link from "next/link"
+import { Album as AlbumType } from "@/types/models/deezer/album"
+import Album from "../../music/album"
+import styles from './styles.module.css'
+
+const EmptyCard = dynamic(() => import("@/components/ui/cards/empty-card"))
+const Card = dynamic(() => import("@/components/ui/cards/base-card"))
 
 export type AlbumsCardType = {
-  data?: []
-}
-const AlbumsCard = ({ data }: AlbumsCardType) => {
-if (!data?.length) {
-  return <EmptyCard text="No results found" />
+  initialData?: SuccessResponse<AlbumType[]>
 }
 
-return (
-<Card>
-  {/* // TODO: integrate data here */}
-  Albums
-</Card>
-)
+const AlbumsCard = ({ initialData }: AlbumsCardType) => {
+  const {
+    data
+  } = initialData ?? {}
+
+  if (!data?.length) {
+    return <EmptyCard text="No results found" />
+  }
+
+  return (
+  <Card>
+    {/* // TODO: integrate data here */}
+    {data.map(({  id, title }) => 
+      <Link 
+        href={`/tracks/${id}`}
+        className={'row'}
+        key={id}
+      >
+        <Album 
+          id={id}
+          title={title} 
+          key={id} 
+        />    
+       </Link>
+    )}
+  </Card>
+  )
 
 }
 

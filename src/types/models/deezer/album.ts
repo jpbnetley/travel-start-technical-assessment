@@ -19,10 +19,10 @@ export type Album = {
   genre_id: number
   genres: Genre[],
   label: string,
-  nb_tracks: number,
-  duration: number,
+  nb_tracks?: number,
+  duration?: number,
   fans: number,
-  release_date: Date,
+  release_date: string,
   record_type: string,
   available: boolean,
   alternative?: Album,

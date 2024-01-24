@@ -23,9 +23,9 @@ const AlbumsCard = ({ initialData }: AlbumsCardType) => {
   return (
   <Card>
     {/* // TODO: integrate data here */}
-    {data.map(({  id, title }) => 
+    {data.map(({  id, title, cover_medium, release_date, record_type }) => 
       <Link 
-        href={`/tracks/${id}`}
+        href={`/album/${id}/tracks`}
         className={'row'}
         key={id}
       >
@@ -33,6 +33,9 @@ const AlbumsCard = ({ initialData }: AlbumsCardType) => {
           id={id}
           title={title} 
           key={id} 
+          imageUrl={cover_medium}
+          releaseDate={release_date}
+          recordType={record_type}
         />    
        </Link>
     )}

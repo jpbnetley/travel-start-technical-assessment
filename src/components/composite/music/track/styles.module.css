@@ -1,0 +1,25 @@
+.track-row {
+  border: 1px solid white;
+  padding: 2rem;
+  margin: 0.5rem;
+  border-radius: 1rem;
+  display: flex;
+  gap: 0.5em;
+  flex-direction: column;
+  min-width: 30rem;
+  max-width: 80rem;
+}
+
+@media (max-width: 700px) {
+  .track-row {
+    min-width: 20rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .track-row {
+    max-width: 15rem;
+    padding: 0.7rem;
+    font-size: larger;
+  }
+}

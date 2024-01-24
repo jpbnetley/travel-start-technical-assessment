@@ -2,7 +2,6 @@ import dynamic from "next/dynamic"
 import Link from "next/link"
 import { Album as AlbumType } from "@/types/models/deezer/album"
 import Album from "../../music/album"
-import styles from './styles.module.css'
 
 const EmptyCard = dynamic(() => import("@/components/ui/cards/empty-card"))
 const Card = dynamic(() => import("@/components/ui/cards/base-card"))

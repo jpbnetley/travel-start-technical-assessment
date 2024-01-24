@@ -19,7 +19,7 @@ export type Track = {
   track_position: number,
   disk_number: number,
   rank: number,
-  release_date: Date,
+  release_date: string,
   explicit_lyrics: ExplicitContentLyrics,
   explicit_content_lyrics: number,
   explicit_content_cover: ExplicitContentCover,

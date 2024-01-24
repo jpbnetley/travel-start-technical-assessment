@@ -21,7 +21,6 @@ const AlbumsCard = ({ initialData }: AlbumsCardType) => {
 
   return (
   <Card>
-    {/* // TODO: integrate data here */}
     {data.map(({  id, title, cover_medium, release_date, record_type }) => 
       <Link 
         href={`/album/${id}/tracks`}

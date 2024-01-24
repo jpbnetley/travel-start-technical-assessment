@@ -1,5 +1,7 @@
-import Card from "@/components/ui/cards/base-card"
-import EmptyCard from "@/components/ui/cards/empty-card"
+import dynamic from "next/dynamic"
+
+const EmptyCard = dynamic(() => import("@/components/ui/cards/empty-card"))
+const Card = dynamic(() => import("@/components/ui/cards/base-card"))
 
 export type TracksCardType = {
   data?: []

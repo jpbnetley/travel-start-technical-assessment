@@ -1,9 +1,11 @@
-import Card from "@/components/ui/cards/base-card"
-import EmptyCard from "@/components/ui/cards/empty-card"
-import { DeezerSearchResponse } from "@/types/models/deezer/search"
-import styles from './styles.module.css'
-import Artist from "../../music/artist"
 import Link from "next/link"
+import dynamic from "next/dynamic"
+import { DeezerSearchResponse } from "@/types/models/deezer/search"
+import Artist from "@/components/composite//music/artist"
+import styles from './styles.module.css'
+
+const EmptyCard = dynamic(() => import("@/components/ui/cards/empty-card"))
+const Card = dynamic(() => import("@/components/ui/cards/base-card"))
 
 export type ArtistsCardType = {
   initialResponse?: SuccessResponse<DeezerSearchResponse[]>
@@ -19,18 +21,17 @@ const ArtistsCard = ({ initialResponse }: ArtistsCardType) => {
 
   return (
   <Card title="Artists">
-    {/* // TODO: integrate data here */ }
       {data.map(({ artist,  id }) => 
       <Link 
-        href={`/artists/${id}`}
+        href={`/artists/${id}/albums`}
         className={styles.link}
         key={id}
       >
-      <Artist 
-        id={artist.id}
-        name={artist.name} 
-        key={id} 
-       />    
+        <Artist 
+          id={artist.id}
+          name={artist.name} 
+          key={id} 
+        />    
        </Link>
     )}
     

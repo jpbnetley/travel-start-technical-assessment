@@ -1,7 +1,5 @@
-import Link from "next/link"
 import styles from './styles.module.css'
 
-// TODO: implement Artist
 export type ArtistType = {
   name: string,
   id: number

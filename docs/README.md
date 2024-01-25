@@ -51,7 +51,7 @@ To further improve load times, Nextjs [dynamic imports](https://nextjs.org/docs/
 An example is available `src/components/composite/cards/albums-card/index.tsx`
 
 ## Images
-For images, the Nextjs Image component is used. This has the benifit of lazy loading the image as the user scrolls  
+For images, the [Nextjs Image component](https://nextjs.org/docs/app/building-your-application/optimizing/images) is used. This has the benifit of lazy loading the image as the user scrolls  
 down when there are a list of items with images.
 
 ## Error handling

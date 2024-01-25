@@ -5,7 +5,9 @@ import styles from './styles.module.css'
 const TopBar = () => (
   <nav className={styles.nav}>
       <Link href='/' >
-        <Button value='Home page' />
+        <Button>
+          Home page
+        </Button>
       </Link>
   </nav>
 )

@@ -1,20 +1,18 @@
 import { ChangeEventHandler, FormEventHandler } from "react"
-import Button from "../../ui/button"
+import Button, {ButtonType} from "../../ui/button"
 import TextInput from "../../ui/text-input"
 import styles from './styles.module.css'
 
 export type SearchType = {
   name: string
-  onSubmit?: FormEventHandler<HTMLInputElement>
   onTextChange?:  ChangeEventHandler<HTMLInputElement>
   searchText?: string
 }
 
 const Search = ({ 
-  name, 
-  onTextChange,
-  onSubmit,
-  searchText
+    name, 
+    onTextChange,
+    searchText
   }: SearchType) => (
   <div className={styles.main}>
     <TextInput 
@@ -23,7 +21,9 @@ const Search = ({
       onChange={onTextChange}
       defaultValue={searchText}
     />
-    <Button type="submit" onSubmit={onSubmit} />
+    <Button type="submit">
+      Search
+    </Button>
   </div>
 )
 

@@ -9,3 +9,12 @@
 .main:hover {
   background-color: #40ebc3;
 }
+
+.error {
+  background-color: firebrick;
+  color: white;
+}
+
+.error:hover {
+  background-color: rgb(178, 70, 70);
+}

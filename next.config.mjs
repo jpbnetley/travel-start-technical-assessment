@@ -16,17 +16,18 @@ const cspHeader = `
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  headers: [
-    {
-      source: '/(.*)',
-      headers: [
+  async headers() { 
+      return [
         {
-          key: 'Content-Security-Policy',
-          value: cspHeader.replace(/\n/g, ''),
-        },
-      ],
-    },
-  ],
+          source: '/(.*)',
+          headers: [
+            {
+              key: 'Content-Security-Policy',
+              value: cspHeader.replace(/\n/g, ''),
+            },
+          ],
+        }]
+  },
   images: {
       remotePatterns: [
       {

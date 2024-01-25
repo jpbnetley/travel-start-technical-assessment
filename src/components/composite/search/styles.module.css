@@ -1,0 +1,13 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 40rem;
+  margin: 1em auto;
+}
+
+@media (max-width: 700px) {
+  .main {
+    min-width: 20rem;
+  }
+}

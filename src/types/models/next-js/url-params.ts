@@ -1,0 +1,1 @@
+export type NextUrlParams = { [key: string]: string | string[] | undefined }

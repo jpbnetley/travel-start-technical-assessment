@@ -1,0 +1,6 @@
+.card {
+  min-width: min-content;
+  border: 0.2em solid gray;
+  padding: 1em 2em;
+  background-color: rgb(96, 149, 144);
+}

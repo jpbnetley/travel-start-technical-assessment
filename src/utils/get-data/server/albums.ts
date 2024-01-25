@@ -1,8 +1,6 @@
 "use server"
 
 import DeezerApi from "@/api/deezer"
-import { error } from "console"
-
 /**
  * fetches album details by artistId for the albums page
  * @param artistId the artistId

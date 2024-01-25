@@ -54,3 +54,6 @@ Errors are handled by making use of Nextjs [error pages](https://nextjs.org/docs
 Custom errors are thrown for the page aggregation, that then gets displayed by the error page.  
 An example of a custom error being thrown can be found here: `src/utils/get-data/server/albums.ts`.
 
+## Design decisions
+Generally, data fetching occurs on the server for the best SEO performance.  
+This is mostly true for 

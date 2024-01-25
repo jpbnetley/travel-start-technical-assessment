@@ -10,15 +10,16 @@
   max-width: 80rem;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .track-row {
-    min-width: 20rem;
+    max-width: 20rem;
+    padding: 0.5rem;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .track-row {
-    max-width: 15rem;
+    min-width: 10rem;
     padding: 0.7rem;
     font-size: larger;
   }

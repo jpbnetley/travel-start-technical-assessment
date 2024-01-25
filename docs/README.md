@@ -68,6 +68,8 @@ An example of a custom error being thrown can be found here: `src/utils/get-data
 ### Data fetching
 Generally, data fetching occurs on the server for the best SEO performance. This is true for the albums, and tracks pages. On the Artist page, no results are loaded till the user enters an artist name.  
 
-A nice to have would be to add [SWR](https://swr.vercel.app/) to revalidate the results as the user stays the page.
+- A nice to have would be to add [SWR](https://swr.vercel.app/) to revalidate the results as the user stays the page.
 For example if the user is on the albums page for the artist, fetching albums incrementally when the user is on the page to dynamically
 update the albums if more albums are added for the artist they are viewing.
+
+- Another improvement that could be added is to have a look at [server actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations) for the form submissions.

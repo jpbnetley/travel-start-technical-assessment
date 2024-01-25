@@ -1,7 +1,5 @@
-import Button from "@/components/ui/button";
-import styles from './styles.module.css'
-import Link from "next/link";
 import TopBar from "@/components/composite/navigation/top-bar";
+import styles from './styles.module.css'
 
 export default function ArtistLayout({
   children,

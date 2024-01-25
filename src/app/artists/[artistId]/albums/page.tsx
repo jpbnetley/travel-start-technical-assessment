@@ -1,8 +1,8 @@
+import { notFound } from "next/navigation"
 import DeezerApi from "@/api/deezer"
 import AlbumsCard from "@/components/composite/cards/albums-card"
 import { NextUrlParams } from "@/types/models/next-js/url-params"
 import normaliseNextSearchParams from "@/utils/handlers/normalize-next-search-params"
-import { notFound } from "next/navigation"
 
 export type ArtistPageType = {
   searchParams: NextUrlParams,

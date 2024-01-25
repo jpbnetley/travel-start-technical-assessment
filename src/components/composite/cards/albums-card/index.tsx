@@ -23,7 +23,7 @@ const AlbumsCard = ({ initialData }: AlbumsCardType) => {
   <Card>
     {data.map(({  id, title, cover_medium, release_date, record_type }) => 
       <Link 
-        href={`/album/${id}/tracks`}
+        href={`/albums/${id}/tracks`}
         className={'row'}
         key={id}
       >

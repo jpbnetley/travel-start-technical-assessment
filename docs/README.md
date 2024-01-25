@@ -56,4 +56,5 @@ An example of a custom error being thrown can be found here: `src/utils/get-data
 
 ## Design decisions
 Generally, data fetching occurs on the server for the best SEO performance.  
-This is mostly true for 
+This is true for the albums, and tracks pages.
+On the Artist page, no results are loaded till the user enters an artist name.

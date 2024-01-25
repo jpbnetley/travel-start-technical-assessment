@@ -1,11 +1,14 @@
 import Card from "../base-card"
 
+export const EMPTY_TEXT = 'No data.'
+
 export type EmptyCardType = {
   text?: string
+  testId?: string
 }
 
-const EmptyCard = ({ text = 'No data.'}: EmptyCardType) => (
-  <Card>
+const EmptyCard = ({ text = EMPTY_TEXT, testId }: EmptyCardType) => (
+  <Card testId={testId}>
     {text}
   </Card>
 )

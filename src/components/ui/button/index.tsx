@@ -5,11 +5,13 @@ export type ButtonType = Omit<DetailedHTMLProps<InputHTMLAttributes<HTMLButtonEl
   type?: 'button' | 'submit',
   variant?: 'error'
   children: ReactNode
+  testId?: string
 }
 
 const Button = ({ 
   type= 'button',
   variant,
+  testId,
   children,
   ...otherProps 
   }: ButtonType) =>  (
@@ -17,6 +19,7 @@ const Button = ({
       type={type}
       className={`${styles.main} ${variant && styles[variant]}`}
       {...otherProps}
+      data-testid={testId}
     >
       {children}
     </button>

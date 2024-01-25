@@ -50,6 +50,10 @@ This has the consequence that pages are server side rendered by default (but can
 To further improve load times, Nextjs [dynamic imports](https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading#nextdynamic) are usedf to only render components that is used in the current flow.
 An example is available `src/components/composite/cards/albums-card/index.tsx`
 
+## Images
+For images, the Nextjs Image component is used. This has the benifit of lazy loading the image as the user scrolls  
+down when there are a list of items with images.
+
 ## Error handling
 Errors are handled by making use of Nextjs [error pages](https://nextjs.org/docs/app/building-your-application/routing/error-handling).
 

@@ -54,6 +54,10 @@ An example is available `src/components/composite/cards/albums-card/index.tsx`
 For images, the [Nextjs Image component](https://nextjs.org/docs/app/building-your-application/optimizing/images) is used. This has the benifit of lazy loading the image as the user scrolls  
 down when there are a list of items with images.
 
+## Link
+The Netjs [Link component](https://nextjs.org/docs/pages/api-reference/components/link) is used for navigating between pages in the app.  
+This allows page content to be pre-fetched for quicker navigation and decreased load times.
+
 ## Error handling
 Errors are handled by making use of Nextjs [error pages](https://nextjs.org/docs/app/building-your-application/routing/error-handling).
 
@@ -61,6 +65,9 @@ Custom errors are thrown for the page aggregation, that then gets displayed by t
 An example of a custom error being thrown can be found here: `src/utils/get-data/server/albums.ts`.
 
 ## Design decisions
-Generally, data fetching occurs on the server for the best SEO performance.  
-This is true for the albums, and tracks pages.  
-On the Artist page, no results are loaded till the user enters an artist name.
+### Data fetching
+Generally, data fetching occurs on the server for the best SEO performance. This is true for the albums, and tracks pages. On the Artist page, no results are loaded till the user enters an artist name.  
+
+A nice to have would be to add [SWR](https://swr.vercel.app/) to revalidate the results as the user goes back to the page.
+For example if the user is on the albums page for the artist, fetching albums incrementally when the user is on the page to dynamically
+update the albums if more albums are added for the artist they are viewing.

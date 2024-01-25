@@ -1,6 +1,6 @@
-import { ChangeEventHandler, FormEventHandler } from "react"
-import Button, {ButtonType} from "../../ui/button"
-import TextInput from "../../ui/text-input"
+import { ChangeEventHandler } from "react"
+import Button from "@/components/ui/button"
+import TextInput from "@/components/ui/text-input"
 import styles from './styles.module.css'
 
 export type SearchType = {

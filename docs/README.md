@@ -1,21 +1,18 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
+
+### System requirements
+- minimum node 18 is required.
+
 Install dependencies:  
 ```bash
 npm i
 ```
 
 - Running the development server:
-
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 - Building for production:
@@ -34,7 +31,7 @@ npm run test
 
 # Security
 To prevent XSS or CSRF attacks, Nextjs has been configured to use cspHeaders.  
-`next.config.mjs` as mentioned by the [nextjs documentation](https://nextjs.org/docs/app/building-your-application/configuring/content-security-policy#without-nonces)
+`next.config.mjs` as mentioned by the [nextjs documentation](https://nextjs.org/docs/app/building-your-application/configuring/content-security-policy#without-nonces).
 
 ## API Keys
 No api keys was used for this project, if there was private api keys, NextJs has the ability to read from environment variables or files.  
@@ -47,7 +44,7 @@ This Netxjs project uses the app directory (rather then the legacy pages directo
 This has the consequence that pages are server side rendered by default (but can be opted out by using the 
 `use client` or `use server` directives).
 
-## Dynamic imports
+## Dynamic imports (lazy loading)
 To further improve load times, Nextjs [dynamic imports](https://nextjs.org/docs/pages/building-your-application/optimizing/lazy-loading#nextdynamic) are usedf to only render components that is used in the current flow.
 An example is available `src/components/composite/cards/albums-card/index.tsx`
 

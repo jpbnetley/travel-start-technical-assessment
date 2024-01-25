@@ -3,6 +3,7 @@ import DeezerApi from "@/api/deezer"
 import TracksCard from "@/components/composite/cards/tracks-card"
 import { NextUrlParams } from "@/types/models/next-js/url-params"
 import normaliseNextSearchParams from "@/utils/handlers/normalize-next-search-params"
+import { getTrackDetails } from "@/utils/get-data/server/albums"
 
 export type ArtistPageType = {
   searchParams: NextUrlParams,
@@ -14,10 +15,7 @@ const ArtistPage = async ({ params }: ArtistPageType) => {
   if (!id) return notFound()
   const albumId = Number.parseInt(id)
 
-  const [albumResponse, tracksResponse] = await  Promise.all([
-    DeezerApi.album.getById(albumId),
-    DeezerApi.album.tracks(albumId)
-  ])
+  const { albumResponse, tracksResponse } = await getTrackDetails(albumId)
 
   return  (
     <>

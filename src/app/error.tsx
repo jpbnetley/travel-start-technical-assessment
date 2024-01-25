@@ -2,7 +2,6 @@
  
 import { useEffect } from 'react'
 import styles from './page.module.css'
-import Button from '@/components/ui/button'
 import ErrorMessage from '@/components/composite/error-message'
 
 export type ErrorPageProps = {

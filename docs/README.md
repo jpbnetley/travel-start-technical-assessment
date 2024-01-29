@@ -40,7 +40,7 @@ No api keys was used for this project, if there was private api keys, NextJs has
 As mentioned [here](https://nextjs.org/docs/app/building-your-application/configuring/environment-variables).
 
 # Architecture
-This Nextjs project uses the app directory (rather then the legacy pages director) for improved CEO. 
+This Nextjs project uses the app directory (rather then the legacy pages director) for improved SEO. 
 
 ## Server rendered 
 This has the consequence that pages are server side rendered by default (but can be opted out by using the 

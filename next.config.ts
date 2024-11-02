@@ -1,3 +1,4 @@
+import {NextConfig} from 'next'
 // https://nextjs.org/docs/app/building-your-application/configuring/content-security-policy#without-nonces
 
 const cspHeader = `
@@ -14,8 +15,7 @@ const cspHeader = `
     upgrade-insecure-requests;
 `
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
   async headers() { 
       return [
         {

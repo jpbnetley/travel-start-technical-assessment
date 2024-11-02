@@ -10,7 +10,8 @@ export type ArtistPageType = {
   params?: NextUrlParams
 }
 
-const ArtistPage = async ({ params }: ArtistPageType) => {
+const ArtistPage = async (props: ArtistPageType) => {
+  const params = await props.params;
   const id = normaliseNextSearchParams(params?.albumId)
   if (!id) return notFound()
   const albumId = Number.parseInt(id)

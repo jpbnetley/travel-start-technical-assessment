@@ -9,15 +9,16 @@ export type HomeType = {
   searchParams: NextUrlParams
 }
 
-export default async function Home({ searchParams }: HomeType) {
+export default async function Home(props: HomeType) {
+  const searchParams = await props.searchParams;
   const artistSearchParam = searchParams?.artistSearch
-  
+
   const cleanedArtistSearchParam = normaliseNextSearchParams(artistSearchParam)
 
   const response = cleanedArtistSearchParam 
   ? await search(cleanedArtistSearchParam)
   : undefined
-  
+
   return (
     <main className={styles.main}>
     <ArtistSearch initialData={response} />

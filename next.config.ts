@@ -13,7 +13,8 @@ const cspHeader = `
     frame-ancestors 'none';
     block-all-mixed-content;
     upgrade-insecure-requests;
-`
+    media-src cdnt-preview.dzcdn.net;
+    `
 
 const nextConfig: NextConfig = {
   async headers() { 
@@ -33,6 +34,10 @@ const nextConfig: NextConfig = {
       {
         protocol: 'https',
         hostname: 'e-cdns-images.dzcdn.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn-images.dzcdn.net',
       },
       ]
     }

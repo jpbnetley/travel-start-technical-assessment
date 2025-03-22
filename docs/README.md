@@ -7,18 +7,18 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Install dependencies:  
 ```bash
-npm i
+pnpm i
 ```
 
 - Running the development server:
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 - Building for production:
 ```bash
-npm run build
-npm run start
+pnpm run build
+pnpm run start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -26,7 +26,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Running tests
 To run the tests, execute 
 ```bash
-npm run test
+pnpm run test
 ```
 Tests are located under the sub folders.  
 Example: the util tests are located under `utils/__tests__` and the component tests are `components/ui/__tests__`

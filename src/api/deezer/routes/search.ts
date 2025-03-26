@@ -23,15 +23,13 @@ const globalSearch = async (query: string, config?: Config ) => {
 
   const {
     searchType,
-    ...restOfSearchConfig
   } = searchConfig ?? {}
   
 
  const searchString = formatSearchString(query, searchType)
 
   const queryString = queryStringBuilder({
-    q: searchString,
-    ...restOfSearchConfig
+    q: searchString
   })
 
  

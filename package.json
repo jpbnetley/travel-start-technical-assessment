@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=20"
+    "node": ">=22"
   },
   "type": "module",
   "scripts": {
@@ -12,7 +12,8 @@
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
-    "test:watch": "vitest watch"
+    "test:watch": "vitest watch",
+    "typescript:check": "tsc --noEmit"
   },
   "dependencies": {
     "@types/qs": "^6.9.18",

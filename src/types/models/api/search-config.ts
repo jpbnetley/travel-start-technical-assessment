@@ -1,6 +1,4 @@
 export type SearchConfig = {
-  strict?: boolean,
-  order?: SearchOrder
   searchType?: SearchType
 }
 

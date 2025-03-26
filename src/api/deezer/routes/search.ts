@@ -1,4 +1,3 @@
-import qs from 'qs'
 import { DEEZER_BASE_URL } from "@/constants/deezer"
 import { DeezerSearchResponse } from '@/types/models/deezer/search'
 import fetchResponseHandler from '@/utils/handlers/fetch-response-handler'
@@ -24,15 +23,13 @@ const globalSearch = async (query: string, config?: Config ) => {
 
   const {
     searchType,
-    ...restOfSearchConfig
   } = searchConfig ?? {}
   
 
  const searchString = formatSearchString(query, searchType)
 
   const queryString = queryStringBuilder({
-    q: searchString,
-    ...restOfSearchConfig
+    q: searchString
   })
 
  

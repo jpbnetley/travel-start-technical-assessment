@@ -3,7 +3,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ## Getting Started
 
 ### System requirements
-- minimum node 18 is required.
+- minimum node 22 is required.
 
 Install dependencies:  
 ```bash

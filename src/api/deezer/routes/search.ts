@@ -1,4 +1,3 @@
-import qs from 'qs'
 import { DEEZER_BASE_URL } from "@/constants/deezer"
 import { DeezerSearchResponse } from '@/types/models/deezer/search'
 import fetchResponseHandler from '@/utils/handlers/fetch-response-handler'

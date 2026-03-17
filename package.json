@@ -16,8 +16,8 @@
     "typescript:check": "tsc --noEmit"
   },
   "dependencies": {
-    "@types/qs": "^6.14.0",
-    "next": "^16.1.6",
+    "@types/qs": "^6.15.0",
+    "next": "^16.1.7",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
@@ -25,17 +25,17 @@
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
-    "@types/node": "^22.19.13",
+    "@types/node": "^24.12.0",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "@vitejs/plugin-react": "^5.1.4",
-    "eslint": "^9.39.3",
-    "eslint-config-next": "^16.1.6",
-    "jsdom": "^28.1.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "^16.1.7",
+    "jsdom": "^29.0.0",
     "typescript": "^5.9.3",
-    "vitest": "^4.0.18"
+    "vitest": "^4.1.0"
   },
-  "packageManager": "pnpm@10.30.3+sha512.c961d1e0a2d8e354ecaa5166b822516668b7f44cb5bd95122d590dd81922f606f5473b6d23ec4a5be05e7fcd18e8488d47d978bbe981872f1145d06e9a740017",
+  "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be",
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild",

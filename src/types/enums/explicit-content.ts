@@ -1,7 +1,7 @@
 export enum ExplicitContent {
-  'Not Explicit' = 0,
+  "Not Explicit" = 0,
   Explicit,
   Unknown,
   Edited,
-  'No Advice Available'
+  "No Advice Available",
 }

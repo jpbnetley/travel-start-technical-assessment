@@ -1,5 +1,5 @@
 import TopBar from "@/components/composite/navigation/top-bar";
-import styles from './styles.module.css'
+import styles from "./styles.module.css";
 
 export default function ArtistLayout({
   children,
@@ -9,9 +9,7 @@ export default function ArtistLayout({
   return (
     <div>
       <TopBar />
-      <div className={styles['page-body']}>
-        {children}
-      </div>
+      <div className={styles["page-body"]}>{children}</div>
     </div>
   );
 }

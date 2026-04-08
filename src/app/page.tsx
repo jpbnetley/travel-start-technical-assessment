@@ -4,24 +4,21 @@ import { NextUrlParams } from "@/types/models/next-js/url-params";
 import normaliseNextSearchParams from "@/utils/handlers/normalize-next-search-params";
 import styles from "./page.module.css";
 
-
 export type HomeType = {
-  searchParams: NextUrlParams
-}
+  searchParams: NextUrlParams;
+};
 
 export default async function Home(props: HomeType) {
   const searchParams = await props.searchParams;
-  const artistSearchParam = searchParams?.artistSearch
+  const artistSearchParam = searchParams?.artistSearch;
 
-  const cleanedArtistSearchParam = normaliseNextSearchParams(artistSearchParam)
+  const cleanedArtistSearchParam = normaliseNextSearchParams(artistSearchParam);
 
-  const response = cleanedArtistSearchParam 
-  ? await search(cleanedArtistSearchParam)
-  : undefined
+  const response = cleanedArtistSearchParam ? await search(cleanedArtistSearchParam) : undefined;
 
   return (
     <main className={styles.main}>
-    <ArtistSearch initialData={response} />
+      <ArtistSearch initialData={response} />
     </main>
   );
 }

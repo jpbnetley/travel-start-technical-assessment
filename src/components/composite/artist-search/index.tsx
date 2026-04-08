@@ -1,30 +1,28 @@
-'use client'
+"use client";
 
-import ArtistsCard from "@/components/composite/cards/artists-card"
-import Search from "@/components/composite/search"
-import { Artist } from "@/types/models/deezer/artist"
-import { useSearchParams } from "next/navigation"
+import ArtistsCard from "@/components/composite/cards/artists-card";
+import Search from "@/components/composite/search";
+import { SuccessResponse } from "@/types/models/api/success-response";
+import { Artist } from "@/types/models/deezer/artist";
+import { useSearchParams } from "next/navigation";
 
-export const ARTIST_SEARCH_NAME = 'artistSearch'
+export const ARTIST_SEARCH_NAME = "artistSearch";
 
 export type ArtistSearchType = {
-  initialData?: SuccessResponse<Artist[]> 
-}
+  initialData?: SuccessResponse<Artist[]>;
+};
 const ArtistSearch = ({ initialData }: ArtistSearchType) => {
-  const pageSearchParams = useSearchParams()
-  const searchText = pageSearchParams.get(ARTIST_SEARCH_NAME) ?? undefined
+  const pageSearchParams = useSearchParams();
+  const searchText = pageSearchParams.get(ARTIST_SEARCH_NAME) ?? undefined;
 
   return (
     <search>
       <form>
-        <Search 
-          name={ARTIST_SEARCH_NAME} 
-          searchText={searchText} 
-        />
+        <Search name={ARTIST_SEARCH_NAME} searchText={searchText} />
         <ArtistsCard initialResponse={initialData} />
       </form>
     </search>
-  )
-}
+  );
+};
 
-export default ArtistSearch
+export default ArtistSearch;

@@ -1,16 +1,14 @@
-import Card from "../base-card"
+import Card from "../base-card";
 
-export const EMPTY_TEXT = 'No data.'
+export const EMPTY_TEXT = "No data.";
 
 export type EmptyCardType = {
-  text?: string
-  testId?: string
-}
+  text?: string;
+  testId?: string;
+};
 
 const EmptyCard = ({ text = EMPTY_TEXT, testId }: EmptyCardType) => (
-  <Card testId={testId}>
-    {text}
-  </Card>
-)
+  <Card testId={testId}>{text}</Card>
+);
 
-export default EmptyCard
+export default EmptyCard;

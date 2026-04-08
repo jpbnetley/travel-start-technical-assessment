@@ -1,43 +1,41 @@
-"use server"
+"use server";
 
-import DeezerApi from "@/api/deezer"
+import DeezerApi from "@/api/deezer";
 /**
  * fetches album details by artistId for the albums page
  * @param artistId the artistId
- * @returns 
+ * @returns
  */
 export const getAlbumDetails = async (artistId: number) => {
   try {
     const [artistResponse, albumsResponse] = await Promise.all([
       DeezerApi.artist.getById(artistId),
-      DeezerApi.artist.albums(artistId)
-    ])
+      DeezerApi.artist.albums(artistId),
+    ]);
 
     return {
       artistResponse,
-      albumsResponse
-    }
-    
+      albumsResponse,
+    };
   } catch (error) {
-    console.error(error)
-    throw new Error('Failed so fetch album details')
+    console.error(error);
+    throw new Error("Failed so fetch album details");
   }
-}
+};
 
 export const getTrackDetails = async (albumId: number) => {
   try {
-    const [albumResponse, tracksResponse] = await  Promise.all([
+    const [albumResponse, tracksResponse] = await Promise.all([
       DeezerApi.album.getById(albumId),
-      DeezerApi.album.tracks(albumId)
-    ])
+      DeezerApi.album.tracks(albumId),
+    ]);
 
     return {
       albumResponse,
-      tracksResponse
-    }
-    
+      tracksResponse,
+    };
   } catch (error) {
-    console.error(error)
-    throw new Error('Failed so fetch album track details')
+    console.error(error);
+    throw new Error("Failed so fetch album track details");
   }
-}
+};

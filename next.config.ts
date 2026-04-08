@@ -1,4 +1,4 @@
-import {NextConfig} from 'next'
+import { NextConfig } from "next";
 // https://nextjs.org/docs/app/building-your-application/configuring/content-security-policy#without-nonces
 
 const cspHeader = `
@@ -14,34 +14,34 @@ const cspHeader = `
     block-all-mixed-content;
     upgrade-insecure-requests;
     media-src cdnt-preview.dzcdn.net;
-    `
+    `;
 
 const nextConfig: NextConfig = {
-  async headers() { 
-      return [
-        {
-          source: '/(.*)',
-          headers: [
-            {
-              key: 'Content-Security-Policy',
-              value: cspHeader.replace(/\n/g, ''),
-            },
-          ],
-        }]
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          {
+            key: "Content-Security-Policy",
+            value: cspHeader.replace(/\n/g, ""),
+          },
+        ],
+      },
+    ];
   },
   images: {
-      remotePatterns: [
+    remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'e-cdns-images.dzcdn.net',
+        protocol: "https",
+        hostname: "e-cdns-images.dzcdn.net",
       },
       {
-        protocol: 'https',
-        hostname: 'cdn-images.dzcdn.net',
+        protocol: "https",
+        hostname: "cdn-images.dzcdn.net",
       },
-      ]
-    }
-  }
-
+    ],
+  },
+};
 
 export default nextConfig;

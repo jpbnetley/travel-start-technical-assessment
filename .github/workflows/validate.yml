@@ -14,11 +14,6 @@ jobs:
     name: Validate code
     runs-on: ubuntu-latest
 
-    strategy:
-      fail-fast: false
-      matrix:
-        command: ["test", "typescript:check", "lint", "fmt:check"]
-
     steps:
       - uses: actions/checkout@v6
       - uses: pnpm/action-setup@v5
@@ -29,4 +24,15 @@ jobs:
           node-version: ${{ env.node_version }}
           cache: "pnpm"
       - run: pnpm install
-      - run: pnpm run ${{ matrix.command }}
+
+      - name: Run tests
+        run: pnpm run test
+        
+      - name: TypeScript check
+        run: pnpm run typescript:check
+
+      - name: Lint
+        run: pnpm run lint
+
+      - name: Format check
+        run: pnpm run fmt:check
